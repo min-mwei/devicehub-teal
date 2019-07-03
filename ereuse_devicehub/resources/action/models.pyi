@@ -306,6 +306,14 @@ class TestKeyboard(Test):
     pass
 
 
+class TestDisplayHinge(Test):
+    pass
+
+
+class TestPowerAdapter(Test):
+    pass
+
+
 class TestTrackpad(Test):
     pass
 

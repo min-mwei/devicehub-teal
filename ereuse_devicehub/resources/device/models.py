@@ -719,6 +719,10 @@ class Keyboard(ComputerAccessory):
     layout = Column(DBEnum(Layouts))  # If we want to do it not null
 
 
+class Trackpad(ComputerAccessory):
+    pass
+
+
 class Mouse(ComputerAccessory):
     pass
 
@@ -788,6 +792,10 @@ class Videoconference(Video):
 class Cooking(Device):
     """Cooking devices."""
     pass
+
+
+class Camera(Device):
+    """Camera device"""
 
 
 class Mixer(Cooking):

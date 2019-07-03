@@ -12,9 +12,11 @@ from ereuse_devicehub.client import UserClient
 from ereuse_devicehub.db import db
 from ereuse_devicehub.resources import enums
 from ereuse_devicehub.resources.action import models
+from ereuse_devicehub.resources.action.models import TestCamera, TestPowerAdapter, TestKeyboard, \
+    TestTrackpad
 from ereuse_devicehub.resources.device import states
 from ereuse_devicehub.resources.device.models import Desktop, Device, GraphicCard, HardDrive, \
-    RamModule, SolidStateDrive
+    RamModule, SolidStateDrive, Camera, Battery, Keyboard, Trackpad
 from ereuse_devicehub.resources.enums import ComputerChassis, Severity, TestDataStorageLength
 from tests import conftest
 from tests.conftest import create_user, file
@@ -361,23 +363,31 @@ def test_erase_physical():
 
 @pytest.mark.xfail(reson='develop')
 def test_measure_battery():
-    """Tests the MeasureBattery."""
-    # todo jn
+    """Tests if device can charge and battery health."""
+    battery = Battery()
+    test = TestPowerAdapter(battery)
+    assert test == 1
 
 
 @pytest.mark.xfail(reson='develop')
 def test_test_camera():
     """Tests the TestCamera."""
-    # todo jn
+    camera = Camera()
+    test = TestCamera(camera)
+    assert test == 1
 
 
 @pytest.mark.xfail(reson='develop')
 def test_test_keyboard():
     """Tests the TestKeyboard."""
-    # todo jn
+    keyboard = Keyboard()
+    test = TestKeyboard(keyboard)
+    assert test == 1
 
 
 @pytest.mark.xfail(reson='develop')
 def test_test_trackpad():
     """Tests the TestTrackpad."""
-    # todo jn
+    trackpad = Trackpad()
+    test = TestTrackpad(trackpad)
+    assert test == 1

@@ -67,12 +67,12 @@ class PriceSoftware(Enum):
 @unique
 class AppearanceRange(Enum):
     """Grades the imperfections that aesthetically affect the device, but not its usage."""
-    Z = 'Z. The device is new'
+    Z = 'Z. New; the device is new'
     A = 'A. Is like new; without visual damage'
     B = 'B. Is in really good condition; small visual damage in difficult places to spot'
-    C = 'C. Is in good condition; small visual damage in parts that are easy to spot, minor cosmetic blemishes on chassis'
-    D = 'D. Is acceptable; visual damage in visible parts, major cosmetic blemishes on chassis, missing cosmetic parts'
-    E = 'E. Is unacceptable; considerable visual damage, missing essential parts'
+    C = 'C. Is in good condition; small visual damage in parts that are easy to spot and/or minor cosmetic blemishes on chassis'
+    D = 'D. Is acceptable; visual damage in visible parts, missing cosmetic parts or/and major cosmetic blemishes on chassis'
+    E = 'E. Is unacceptable; considerable visual damage and missing essential aesthetic parts'
 
     def __str__(self):
         return self.name
@@ -81,10 +81,36 @@ class AppearanceRange(Enum):
 @unique
 class FunctionalityRange(Enum):
     """Grades the defects of a device that affect its usage."""
-    A = 'A. All the buttons works perfectly, no screen/camera defects and chassis without usage issues'
-    B = 'B. There is a button difficult to press or unstable it, a screen/camera defect or chassis problem'
-    C = 'C.	Chassis defects or multiple buttons don\'t work; broken or unusable it, some screen/camera defect'
-    D = 'D.	Chassis severity usage problems. All buttons, screen or camera don\'t work; broken or unusable it'
+    A = 'A. Highly usable; all the buttons works perfectly, no screen/camera defects and chassis without usage issues'
+    B = 'B. Usable; there is a button difficult to press or unstable it and screen/camera has some minor defects'
+    C = 'C. Poor functionality; chassis problems or/and multiple buttons don\'t work, are broken or unusable it, screen/camera has major defects'
+    D = 'D. Non-functionality; chassis severity usage problems and screen or camera don\'t work, broken or unusable it'
+
+    def __str__(self):
+        return self.name
+
+
+@unique
+class AppearanceRange(Enum):
+    """Califica las imperfecciones que afectan estéticamente al dispositivo, pero no a su uso."""
+    Z = 'Z. Nuevo; el dispositivo es nuevo'
+    A = 'A. Es como nuevo; sin daños visuales'
+    B = 'B. Está en muy buenas condiciones; pequeños daños visuales en lugares difíciles de detectar'
+    C = 'C. Está en buenas condiciones; pequeños daños visuales en partes que son fáciles de detectar y/o pequeñas imperfecciones cosméticas en la cascasa'
+    D = 'D. Es aceptable; daño visual en partes visibles, partes cosméticas faltantes y/o imperfecciones cosméticas importantes en la cascasa'
+    E = 'E. Es inaceptable; daños visuales considerables y falta de partes estéticas esenciales'
+
+    def __str__(self):
+        return self.name
+
+
+@unique
+class FunctionalityRange(Enum):
+    """Califica los defectos de un dispositivo que afectan su uso."""
+    A = 'A. Muy utilizable; todos los botones funcionan perfectamente, sin defectos de pantalla/cámara y la cascasa sin problemas de uso'
+    B = 'B. Utilizable; hay un botón difícil de pulsar o inestable y la pantalla/cámara tiene algunos defectos menores'
+    C = 'C. Poca funcionalidad; problemas de chasis y/o múltiples botones no funcionan, están rotos o inutilizables, la pantalla/cámara tiene defectos mayores'
+    D = 'D. No-funcionalidad; problemas de uso graves en la cascasa y la pantalla o la cámara no funcionan, están rotas o inutilizables'
 
     def __str__(self):
         return self.name
